@@ -2,27 +2,22 @@ using UnityEngine;
 
 public class Rectangle : MonoBehaviour
 {
-    public float width = 2.0f;
-    public float height = 1.0f;
-    public Vector2 centrePoint;
-    public float minX;
-    public float maxX;
-    public float minY;
-    public float maxY;
+    [HideInInspector] public float width;
+    [HideInInspector] public float height;
+    [HideInInspector] public float minX;
+    [HideInInspector] public float maxX;
+    [HideInInspector] public float minY;
+    [HideInInspector] public float maxY;
+    [HideInInspector] private Vector2 centrePoint;
 
-    // Start is called before the first frame update
     void Start()
     {
         centrePoint = transform.position;
+        width = transform.localScale.x;
+        height = transform.localScale.y;
         minX = centrePoint.x - width/2;
         maxX = centrePoint.x + width/2;
         minY = centrePoint.y - height/2;
         maxY = centrePoint.y + height/2;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
