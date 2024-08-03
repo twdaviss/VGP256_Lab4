@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5973514033732938763}
   - component: {fileID: 1304956516387475941}
   - component: {fileID: 5036184010327864367}
+  - component: {fileID: 425414211484871261}
   m_Layer: 0
-  m_Name: Green Circle
+  m_Name: Red Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.35736728, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.07296247, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,3 +100,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.5
   worldObjects: {fileID: 0}
+--- !u!114 &425414211484871261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318197111068304364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e78b691530fc4542ac205af3fa187b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldScale: {x: 1, y: 1, z: 1}
+  localScale: {x: 1, y: 1, z: 1}
+  worldRotationAxis: 3
+  worldRotationDegrees: 0
+  localRotationAxis: 0
+  localRotationDegrees: 0
+  worldTranslationVector: {x: 0, y: 0, z: 0}
+  localTranslationVector: {x: 0, y: 0, z: 0}
+  keepRotating: 1
+  rotationSpeed: 50
+  reverseDirectionMultiplier: 0

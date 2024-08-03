@@ -19,7 +19,7 @@ public class RunAway : MonoBehaviour
         float distance = Vector2.Distance(player.transform.position, transform.position);
         if (distance < minDistance)
         {
-            transform.position = (Vector2)transform.position + (direction * (minDistance-distance)) ;
+            transform.position = (Vector2)transform.position + (direction * (minDistance-distance)); //move away from player 
         }
     }
 }

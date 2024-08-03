@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
+    [SerializeField] private TMP_Text text;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip gainPoint;
+    [SerializeField] private AudioClip losePoint;
+    [SerializeField] private AudioClip hitWall;
 
-    private float radius = 0.5f;
-    private static int score;
-
+    private static int score = 0;
     void Update()
     {
         Vector2 moveDirection;
@@ -16,16 +20,29 @@ public class Player : MonoBehaviour
         moveDirection.y = Input.GetAxisRaw("Vertical");
 
         transform.position = new Vector3(transform.position.x + (moveDirection.x * Time.deltaTime * moveSpeed), transform.position.y + (moveDirection.y * Time.deltaTime * moveSpeed));
+        text.text = score.ToString();
     }
 
-    public void IncreaseScore(int scoreType)
+    public void IncreaseScore(int scoreAmount)
     {
-        if(scoreType == 0)
-        {
+        score += scoreAmount;
+        if (scoreAmount > 0) 
+        { 
+            audioSource.clip = gainPoint;
+            audioSource.Play();
         }
-        else if (scoreType == 1)
+        else
         {
+            audioSource.clip = losePoint;
+            audioSource.Play();
         }
+        if(score < 0) score = 0;  
+    }
+
+    public void PlayCollisionSound()
+    {
+        audioSource.clip = hitWall;
+        audioSource.Play();
     }
 }
 
