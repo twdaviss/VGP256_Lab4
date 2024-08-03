@@ -23,7 +23,7 @@ public class Circle : MonoBehaviour
     {
         for (int i = 0; i < worldObjects.transform.childCount; i++)
         {
-            if(worldObjects.transform.GetChild(i).gameObject == this.gameObject) { return; }
+            if(worldObjects.transform.GetChild(i).gameObject == this.gameObject) { continue; }
             if (worldObjects.transform.GetChild(i).GetComponent<Circle>() != null || worldObjects.transform.GetChild(i).transform.childCount > 0)
             {
                 int pointValue = 1;
