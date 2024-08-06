@@ -67,9 +67,9 @@ public class Circle : MonoBehaviour
 
                 if (Vector2.Distance(transform.position, rectangle.transform.position) > 2 * Mathf.Max(rectangle.width, rectangle.height)) { continue; } // too far away to bother checking
 
-                // find closest x and y to get nearest edge or corner
+                // find nearest edge or corner on rectangle
                 Vector2 edge = Vector2.zero;
-                if (rectangle.minX < transform.position.x && transform.position.x < rectangle.maxX) // 'walks' in y value 
+                if (rectangle.minX < transform.position.x && transform.position.x < rectangle.maxX) // 'walks' in x value 
                 {
                     edge.x = transform.position.x;
                 }
@@ -93,10 +93,12 @@ public class Circle : MonoBehaviour
                 {
                     edge.y = rectangle.minY;
                 }
+
                 float distX = transform.position.x - edge.x; // distance components to nearest edge/corner
                 float distY = transform.position.y - edge.y;
 
                 float distance = Mathf.Sqrt((distX * distX) + (distY * distY)); // distance from closest edge
+
                 if (distance < radius) // intersecting
                 {
                     Vector2 direction = (Vector2)transform.position - edge; // direction of overlap
