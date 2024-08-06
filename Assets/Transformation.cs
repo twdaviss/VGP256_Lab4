@@ -71,17 +71,13 @@ public class Transformation : MonoBehaviour
         scale = defaultScale;
         rotation = defaultRotation;
         position = defaultPosition;
-
-        //position = parentPosition + (scale * positionRelativeToParent)
-        //positionRelativeToParent = (position - parentPosition) / scale
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (keepRotating)
         {
-            worldRotationDegrees +=  reverseDirectionMultiplier * Time.deltaTime * rotationSpeed;
+            worldRotationDegrees +=  reverseDirectionMultiplier * Time.deltaTime * rotationSpeed; // continuously rotates
         }
         ScalingWorld(worldScale);
         ScalingParent(localScale);
